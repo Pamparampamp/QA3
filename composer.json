@@ -1,0 +1,19 @@
+{
+    "name": "arnas/qa3",
+    "authors": [
+        {
+            "name": "arnas112",
+            "email": "72792606+arnas112@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    },  "autoload": {
+            "psr-4": {
+            "App\\": "app",
+            "Controller\\": "app\\controllers",
+            "Repository\\": "app\\repositories",
+            "Model\\": "app\\models"
+}
+}
+}
