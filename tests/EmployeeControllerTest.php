@@ -9,7 +9,7 @@ use Repository\EmployeeRepository;
 
 class EmployeeContollerTest extends TestCase {
 
-//======================================== example 1 =========================================
+//==========================1============== example 1 =========================================
 // public function testGetAllJsonReturnsJson() {
 // // given
 // $employeeController = new EmployeeController(new EmployeeRepository());
@@ -19,7 +19,7 @@ class EmployeeContollerTest extends TestCase {
 // assertEquals('[{"id":"1","name":"Jonas"},{"id":"2","name":"Petras"}]', $res);
 // }
 
-//=============================================Stub example =========================================
+//========================2=====================Stub example =========================================
 
 
 
@@ -36,18 +36,18 @@ class EmployeeContollerTest extends TestCase {
 // assertEquals('[{"id":1,"name":"Jonas"},{"id":2,"name":"Petras"}]', $res);
 // }
 
-//======================================================Mock example==================================
+//========================3==============================Mock example==================================
 
 public function testGetAllJsonReturnsJson() {
 $mock = $this->getMockBuilder(EmployeeRepository::class)->getMock();
 $employeeController = new EmployeeController($mock);
-$mock->expects($this->exactly(2))
+$mock->expects($this->exactly(1))
 ->method('getAll')
-->willReturn(array(new Employee(1, "Jonas")));
+->willReturn(array(new Employee(1, "Jonas"),new Employee(2, "Petras")));
 // when
 $res = $employeeController->getAllJson();
 // then 
-assertEquals('[{"id":1,"name":"Jonas"}]', $res);
+// assertEquals('[{"id":1,"name":"Jonas"},{"id":2,"name":"Petras"}]', $res);
 }
 
 
