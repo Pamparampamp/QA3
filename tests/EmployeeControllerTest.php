@@ -46,8 +46,10 @@ $mock->expects($this->exactly(1))
 ->willReturn(array(new Employee(1, "Jonas"),new Employee(2, "Petras")));
 // when
 $res = $employeeController->getAllJson();
+
 // then 
-// assertEquals('[{"id":1,"name":"Jonas"},{"id":2,"name":"Petras"}]', $res);
+assertEquals('[{"id":1,"name":"Jonas"},{"id":2,"name":"Petras"}]', $res);
+
 }
 
 
